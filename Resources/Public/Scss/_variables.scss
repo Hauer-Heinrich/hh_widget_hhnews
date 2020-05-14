@@ -1,0 +1,215 @@
+/* GLOBAL COLORS */
+$color-brand: #7CA3BE !default;
+$color-brand2: #239BD2 !default;
+$text-color: #2B3339 !default;
+
+$color-grey: #00000080;
+$color-grey-dark: #444A4D !default;
+
+/* BREAKPOINTS */
+$breakpoints: (
+    small : 300px,
+    medium: 860px,
+    large : 1280px,
+    xlarge: 1921px
+);
+$mobile: 1025px;
+
+/* ------------------------------------- */
+
+$a-color: $color-brand2 !default;
+$a-hover-color: $text-color !default;
+$a-hover-transition-speed: 400ms !default;
+
+/* ------------------------------------- */
+
+$btn-transition-speed: 500ms !default;
+
+/* Typography */
+$basefont: 'Montserrat', sans-serif !default;
+$font-size-base:        16px !default;
+$font-size-base-medium: 16px !default;
+$font-size-base-large:  16px !default;
+
+$line-height-base:      1.5em !default;
+$font-weight-base:      600 !default;
+$font-weight-bold:      600 !default;
+
+/* ------------------------------------- */
+
+$heading-color:         $text-color !default;
+$heading-font:          $basefont !default;
+$heading-weight:        600 !default;
+$heading-case:          none !default;
+
+/* font-size in px */
+$font-20: 1.25rem;
+
+$h1-font-sizes: (
+    null  : 3.75vw,
+    small : 30px,
+    medium: 3.75vw,
+    large : 3.75vw,
+    xlarge: 72px
+);
+
+$h2-font-sizes: (
+    null  : 1.125rem,
+    small : 1.125rem,
+    medium: 1.125rem,
+    large : 1.125rem
+);
+
+$h3-font-sizes: (
+    null  : 1.35rem,
+    small : 1.35rem,
+    medium: 2rem,
+    large : 2rem
+);
+
+$h4-font-sizes: (
+    null  : 1rem,
+    small : 1rem,
+    medium: 1.5rem,
+    large : 1.5rem
+);
+
+$h5-font-sizes: (
+    null  : 1rem,
+    small : 1rem,
+    medium: 1rem,
+    large : 1rem
+);
+
+$h2-subheader-size: (
+    null  : 1.35rem,
+    small : 1.35rem,
+    medium: 2rem,
+    large : 2rem
+);
+
+$h3-subheader-size: (
+    null  : 1.35rem,
+    small : 1.35rem,
+    medium: 2rem,
+    large : 2rem
+);
+
+$h4-subheader-size: (
+    null  : 1rem,
+    small : 1rem,
+    medium: 1.5rem,
+    large : 1.5rem
+);
+
+$h5-subheader-size: (
+    null  : 1rem,
+    small : 1rem,
+    medium: 1rem,
+    large : 1rem
+);
+
+/* ------------------------------------- */
+
+$font-size-default: $font-size-base !default;
+
+$p-font-sizes: (
+    null  : 1.375rem,
+    small : 1.375rem,
+    medium: 1.375rem,
+    large : 1.375rem, // screen and (min-width: 1280px)
+    xlarge: 1.375rem // screen and (min-width: 1921px)
+);
+
+$font-sizes-xlarge: (
+    null  : 2rem,
+    small : 2rem,
+    medium: 5rem,
+    large : 9rem
+);
+
+$font-sizes-large: (
+    null  : 2rem,
+    small : 2rem,
+    medium: 3rem,
+    large : 3rem
+);
+
+$font-sizes-medium: (
+    null  : 1.35rem,
+    small : 1.35rem,
+    medium: 2rem,
+    large : 2rem
+);
+
+$font-sizes-small: (
+    null  : 1rem,
+    small : 1rem,
+    medium: 1rem,
+    large : 1rem
+);
+
+$font-sizes-xsmall: (
+    null  : 1rem,
+    small : 1rem,
+    medium: 1rem,
+    large : 1rem
+);
+
+$letter-spacing-1: 1px !default;
+$letter-spacing-2: 2px !default;
+
+/* ------------------------------------- */
+
+/* Container */
+$container-max-width: 1210px;
+$container-gap-horizontal: 6vw !default;
+$container-gap-vertical: 130px !default;
+$container-gap-horizontal-overlayout: 115px !default;
+
+/* Header */
+/* for header items like menu a, language a */
+$header-items-padding-horizontal: 1.8vw !default;
+$header-items-padding-vertical: 1.8vw !default;
+
+$header-items-padding-horizontal-4k: 30px !default;
+$header-items-padding-vertical-4k: 30px !default;
+
+/* Menu Main */
+$menu-main-font-size: $font-20 !default;
+$menu-main-color-a: $text-color !default;
+$menu-main-color-a-hover: $color-brand2 !default;
+
+$menu-main-color-sub-bg: $color-brand2 !default;
+$menu-main-color-sub-a: #fff !default;
+$menu-main-color-sub-a-hover: $color-brand !default;
+
+$menu-mobile-btn-color: $color-brand !default;
+
+/* Menu Main Mobile */
+$menu-main-mobile-font-size: 17px;
+
+/* Footer */
+$footer-bg: $color-grey-dark !default;
+$footer-color-text: #fff !default;
+$footer-color-a: $footer-color-text !default;
+$footer-color-a-hover: $color-brand2 !default;
+
+/* Searchbox */
+$searchbox-font-size: $menu-main-font-size !default;
+$searchbox-border-color: $color-brand2;
+$searchbox-btn-bg: url("../../../Icons/icon-search.svg") !default;
+$searchbox-btn-bg-color: $color-brand2 !default;
+
+/* QuickLinks */
+$quickLink-bg-Color: $color-brand !default;
+
+/* Accordion */
+$acc-header-bg: transparent !default;
+$acc-header-active-bg: transparent !default;
+$acc-header-color: $text-color !default;
+$acc-header-active-color: $text-color !default;
+$acc-arrow-color: #ccc !default;
+$acc-arrow-active-color: #000 !default;
+$acc-arrow-bg: $color-brand !default;
+$acc-arrow-active-bg: $color-brand !default;

@@ -1,0 +1,30 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  HauerHeinrich\HhWidgetHhnews\:
+    resource: '../Classes/*'
+
+  dashboard.widget.hhnews:
+    class: 'HauerHeinrich\HhWidgetHhnews\Widgets\HhnewsWidget'
+    arguments:
+      $view: '@dashboard.views.widget'
+      $cache: '@cache.dashboard.rss'
+      $button:
+        url: 'https://www.hauer-heinrich.de'
+        title: 'Öffne hauer-heinrich.de'
+        text: 'www.hauer-heinrich.de'
+        target: '_blank'
+      $options:
+        feedUrl: 'http://www.hauer-heinrich.localhost/news/newsrss'
+    tags:
+      - name: dashboard.widget
+        identifier: 'hhnews'
+        groupNames: 'news'
+        title: 'Hauer-Heinrich News'
+        description: 'Zeigt die News von Hauer-Heinrich.de an.'
+        iconIdentifier: 'content-widget-rss'
+        height: 'large'
+        width: 'medium'

@@ -1,0 +1,29 @@
+/**
+ * MIXINS
+ */
+/* e.g. @include prefix(( box-shadow: 1px 1px 1px 1px opacify($color-main, 0.6) )); */
+/* e.g. @include box-sizing(border-box); */
+/* GLOBAL COLORS */
+/* BREAKPOINTS */
+/* ------------------------------------- */
+/* ------------------------------------- */
+/* Typography */
+/* ------------------------------------- */
+/* font-size in px */
+/* ------------------------------------- */
+/* ------------------------------------- */
+/* Container */
+/* Header */
+/* for header items like menu a, language a */
+/* Menu Main */
+/* Menu Main Mobile */
+/* Footer */
+/* Searchbox */
+/* QuickLinks */
+/* Accordion */
+.widget-hhnews td {
+  display: flex; }
+  .widget-hhnews td .media {
+    margin-right: 10px; }
+
+/*# sourceMappingURL=sourcemaps/widgets.css.map */
