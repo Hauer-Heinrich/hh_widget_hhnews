@@ -8,7 +8,11 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Fluid\View\StandaloneView;
 use TYPO3\CMS\Dashboard\Widgets\WidgetConfigurationInterface;
 
-class HhnewsWidget implements \TYPO3\CMS\Dashboard\Widgets\WidgetInterface, \TYPO3\CMS\Dashboard\Widgets\AdditionalCssInterface {
+class HhnewsWidget
+    implements
+        \TYPO3\CMS\Dashboard\Widgets\WidgetInterface,
+        \TYPO3\CMS\Dashboard\Widgets\AdditionalCssInterface,
+        \TYPO3\CMS\Dashboard\Widgets\AdditionalJavaScriptInterface {
 
     /**
      * @var WidgetConfigurationInterface
@@ -49,7 +53,7 @@ class HhnewsWidget implements \TYPO3\CMS\Dashboard\Widgets\WidgetInterface, \TYP
         $this->options = array_merge(
             [
                 'limit' => 5,
-                'lifeTime' => 43200
+                'lifeTime' => 43200,
             ],
             $options
         );
@@ -67,6 +71,11 @@ class HhnewsWidget implements \TYPO3\CMS\Dashboard\Widgets\WidgetInterface, \TYP
         return $this->view->render();
     }
 
+    /**
+     * Get RSS feed from URL
+     *
+     * @return array
+     */
     protected function getRssItems(): array {
         $cacheHash = md5($this->options['feedUrl']);
         if ($items = $this->cache->get($cacheHash)) {
@@ -104,9 +113,25 @@ class HhnewsWidget implements \TYPO3\CMS\Dashboard\Widgets\WidgetInterface, \TYP
         return $items;
     }
 
+    /**
+     * Add plain css file(s) to the dashboard widget
+     *
+     * @return array
+     */
     public function getCssFiles(): array {
         return [
             'EXT:hh_widget_hhnews/Resources/Public/Css/widgets.css'
+        ];
+    }
+
+    /**
+     * Add plain javascript file(s) to the dashboard widget
+     *
+     * @return array
+     */
+    public function getJsFiles(): array {
+        return [
+            // 'EXT:my_extension/Resources/Public/JavaScript/file.js',
         ];
     }
 }

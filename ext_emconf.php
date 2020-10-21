@@ -1,6 +1,6 @@
 <?php
-$EM_CONF[$_EXTKEY] = [
-    'title' => 'Dashboard Hauer-Heinrich News',
+$EM_CONF['hh_widget_hhnews'] = [
+    'title' => 'Hauer-Heinrich - Dashboard News',
     'description' => 'Hauer-Heinrich news widget for ext:dashboard',
     'category' => 'be',
     'author' => 'Christian Hackl',
@@ -17,7 +17,8 @@ $EM_CONF[$_EXTKEY] = [
     'constraints' => [
         'depends' => [
             'typo3' => '10.4.0-10.4.99',
-            'php' => '7.2.0-7.4.99'
+            'php' => '7.2.0-7.4.99',
+            'dashboard' => ''
         ],
         'conflicts' => [],
         'suggests' => []

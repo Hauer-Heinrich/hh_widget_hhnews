@@ -18,7 +18,7 @@ services:
         text: 'www.hauer-heinrich.de'
         target: '_blank'
       $options:
-        feedUrl: 'http://www.hauer-heinrich.localhost/news/newsrss'
+        feedUrl: 'https://www.hauer-heinrich.de/news/newsrss'
     tags:
       - name: dashboard.widget
         identifier: 'hhnews'

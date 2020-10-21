@@ -1,0 +1,6 @@
+options {
+    dashboard {
+        ### https://docs.typo3.org/c/typo3/cms-core/master/en-us/Changelog/10.3/Feature-90333-Dashboard.html
+        dashboardPresetsForNewUsers = dashboardPreset-hhnews
+    }
+}
