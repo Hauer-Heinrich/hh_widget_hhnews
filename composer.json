@@ -1,5 +1,5 @@
 {
-    "name": "hauer-heinrich/hh-widget-hhnews",
+    "name": "hauerheinrich/hh-widget-hhnews",
     "type": "typo3-cms-extension",
     "description": "Hauer-Heinrich - Widget news for the dashboard.",
     "homepage": "https://www.hauer-heinrich.de",
@@ -23,10 +23,6 @@
         "extension",
         "hauer-heinrich"
     ],
-    "replace": {
-        "hauer-heinrich/hh_widget_hhnews": "self.version",
-        "typo3-ter/hh-widget-hhnews": "self.version"
-    },
     "require": {
         "typo3/cms-core": "^10.2.0 || ^11.5.0",
         "typo3/cms-dashboard": "^10.2.0 || ^11.5.0"
