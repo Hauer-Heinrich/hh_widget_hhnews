@@ -16,12 +16,17 @@
         "source": "https://github.com/Hauer-Heinrich/hh_widget_hhnews",
         "docs": "https://github.com/Hauer-Heinrich/hh_widget_hhnews/blob/master/README.md"
     },
-    "version": "1.1.0",
     "license": ["GPL-2.0-or-later"],
     "keywords": [
         "TYPO3 CMS",
         "extension",
         "hauer-heinrich"
+    ],
+    "funding": [
+        {
+            "type": "paypal",
+            "url": "https://www.paypal.com/paypalme/hauerheinrich"
+        }
     ],
     "require": {
         "typo3/cms-core": "^10.2.0 || ^11.5.0",
@@ -29,7 +34,7 @@
     },
     "autoload": {
         "psr-4": {
-            "HauerHeinrich\\HhWidgetHhnews\\": "Classes"
+            "HauerHeinrich\\HhWidgetHhnews\\": "Classes/"
         }
     },
     "extra": {
