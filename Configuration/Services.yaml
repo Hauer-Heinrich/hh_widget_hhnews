@@ -24,7 +24,7 @@ services:
         identifier: 'hhnews'
         groupNames: 'news'
         title: 'Hauer-Heinrich News'
-        description: 'Zeigt die News von Hauer-Heinrich.de an.'
+        description: 'Shows news of www.hauer-heinrich.de.'
         iconIdentifier: 'content-widget-rss'
         height: 'large'
         width: 'medium'
