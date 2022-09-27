@@ -3,7 +3,6 @@
 <f:layout name="Widget/Widget" />
 
 <f:section name="main">
-
     <div class="widget-table-wrapper">
         <table class="widget-table widget-hhnews">
             <f:for each="{items}" as="item">
@@ -11,19 +10,19 @@
                     <td>
                         <f:if condition="{item.enclosure.url}">
                             <div class="media">
-                                <f:link.external uri="{item.link}" target="_blank" rel="noreferrer">
+                                <a href="{item.link}" target="_blank" rel="noreferrer">
                                     <f:switch expression="{item.enclosure.type}">
                                         <f:case value="video/mp4">
                                         </f:case>
                                         <f:defaultCase>
-                                            <f:image src="{item.enclosure.url}" width="100c" />
+                                            <img src="{item.enclosure.url}" alt="Image of {item.title}" />
                                         </f:defaultCase>
                                     </f:switch>
-                                </f:link.external>
+                                </a>
                             </div>
                         </f:if>
                         <div class="content">
-                            <f:link.external uri="{item.link}" target="_blank" rel="noreferrer"><strong>{item.title}</strong></f:link.external>
+                            <a href="{item.link}" target="_blank" rel="noreferrer"><strong>{item.title}</strong></a>
                             <small><time datetime="{item.pubDate -> f:format.date(format: '%Y-%m-%d')}">{item.pubDate -> f:format.date()}</time></small>
                             <p>{item.description -> f:format.crop(maxCharacters: 180)}</p>
                         </div>
@@ -32,7 +31,6 @@
             </f:for>
         </table>
     </div>
-
 </f:section>
 
 <f:section name="footer">

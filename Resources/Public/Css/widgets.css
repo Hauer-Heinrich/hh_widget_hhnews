@@ -25,5 +25,8 @@
   display: flex; }
   .widget-hhnews td .media {
     margin-right: 10px; }
+    .widget-hhnews td .media img {
+      height: auto;
+      max-width: 50px; }
 
 /*# sourceMappingURL=sourcemaps/widgets.css.map */

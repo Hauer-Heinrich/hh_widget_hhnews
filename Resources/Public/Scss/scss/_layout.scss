@@ -4,6 +4,11 @@
 
         .media {
             margin-right: 10px;
+
+            img {
+                height: auto;
+                max-width: 50px;
+            }
         }
     }
 }
