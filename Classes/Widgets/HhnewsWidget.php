@@ -59,6 +59,11 @@ class HhnewsWidget
         );
     }
 
+    /**
+     * This method returns the content of a widget. The returned markup will be delivered by an AJAX call and will not be escaped.
+     *
+     * @return string
+     */
     public function renderWidgetContent(): string {
         $this->view->setTemplate('HhnewsWidget');
         $this->view->assignMultiple([
@@ -69,6 +74,15 @@ class HhnewsWidget
         ]);
 
         return $this->view->render();
+    }
+
+    /**
+     * This method returns the options of the widget as set in the registration.
+     *
+     * @return array
+     */
+    public function getOptions(): array {
+        return [];
     }
 
     /**
