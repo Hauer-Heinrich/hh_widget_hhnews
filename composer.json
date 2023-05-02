@@ -16,6 +16,7 @@
         "source": "https://github.com/Hauer-Heinrich/hh_widget_hhnews",
         "docs": "https://github.com/Hauer-Heinrich/hh_widget_hhnews/blob/master/README.md"
     },
+    "version": "1.1.2",
     "license": ["GPL-2.0-or-later"],
     "keywords": [
         "TYPO3 CMS",
