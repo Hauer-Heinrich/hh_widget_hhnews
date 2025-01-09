@@ -1,4 +1,15 @@
 <?php
+
+/***************************************************************
+ * Extension Manager/Repository config file for ext "hh_widget_hhnews".
+ *
+ * Auto generated 28-08-2018 11:22
+ *
+ * Manual updates:
+ * Only the data in the array - everything else is removed by next
+ * writing. "version" and "dependencies" must not be touched!
+ ***************************************************************/
+
 $EM_CONF['hh_widget_hhnews'] = [
     'title' => 'Hauer-Heinrich - Dashboard News',
     'description' => 'Hauer-Heinrich news widget for ext:dashboard',
@@ -8,7 +19,7 @@ $EM_CONF['hh_widget_hhnews'] = [
     'author_company' => 'Hauer-Heinrich.de',
     'state' => 'stable',
     'clearCacheOnLoad' => true,
-    'version' => '1.1.2',
+    'version' => '1.2.0',
     'autoload' => [
         'psr-4' => [
             'HauerHeinrich\\HhWidgetHhnews\\' => 'Classes'
@@ -16,7 +27,7 @@ $EM_CONF['hh_widget_hhnews'] = [
     ],
     'constraints' => [
         'depends' => [
-            'typo3' => '11.5.0-12.4.99',
+            'typo3' => '12.4.0-13.4.99',
             'dashboard' => ''
         ],
         'conflicts' => [],

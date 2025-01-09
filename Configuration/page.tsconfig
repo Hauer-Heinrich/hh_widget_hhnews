@@ -1,0 +1,2 @@
+# Pattern: templates."composer-name"."something-unique" = "overriding-extension-composer-name":"entry-path"
+templates.typo3/cms-dashboard.4684517 = hauerheinrich/hh-widget-hhnews:Resources/Private/Templates/

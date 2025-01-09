@@ -3,51 +3,35 @@ declare(strict_types=1);
 
 namespace HauerHeinrich\HhWidgetHhnews\Widgets;
 
-use TYPO3\CMS\Core\Cache\Frontend\FrontendInterface as Cache;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Fluid\View\StandaloneView;
-use TYPO3\CMS\Dashboard\Widgets\WidgetConfigurationInterface;
+use \Psr\Http\Message\ServerRequestInterface;
+use \TYPO3\CMS\Backend\View\BackendViewFactory;
+use \TYPO3\CMS\Core\Cache\Frontend\FrontendInterface as Cache;
+use \TYPO3\CMS\Core\Utility\GeneralUtility;
+use \TYPO3\CMS\Dashboard\Widgets\WidgetConfigurationInterface;
 
 class HhnewsWidget
     implements
         \TYPO3\CMS\Dashboard\Widgets\WidgetInterface,
+        \TYPO3\CMS\Dashboard\Widgets\RequestAwareWidgetInterface,
         \TYPO3\CMS\Dashboard\Widgets\AdditionalCssInterface,
         \TYPO3\CMS\Dashboard\Widgets\AdditionalJavaScriptInterface {
 
-    /**
-     * @var WidgetConfigurationInterface
-     */
-    private $configuration;
-
-    /**
-     * @var StandaloneView
-     */
-    private $view;
-
-    /**
-     * @var Cache
-     */
-    private $cache;
-
-    /**
-     * @var array
-     */
-    private $button;
-
-    /**
-     * @var array
-     */
-    private $options;
+    private WidgetConfigurationInterface $configuration;
+    private BackendViewFactory $backendViewFactory;
+    private Cache $cache;
+    private array $button;
+    private array $options;
+    private ServerRequestInterface $request;
 
     public function __construct(
         WidgetConfigurationInterface $configuration,
-        StandaloneView $view,
+        BackendViewFactory $backendViewFactory,
         Cache $cache,
         array $button = [],
         array $options = []
     ) {
         $this->configuration = $configuration;
-        $this->view = $view;
+        $this->backendViewFactory = $backendViewFactory;
         $this->cache = $cache;
         $this->button = $button;
         $this->options = array_merge(
@@ -59,21 +43,26 @@ class HhnewsWidget
         );
     }
 
+    public function setRequest(ServerRequestInterface $request): void {
+        $this->request = $request;
+    }
+
     /**
      * This method returns the content of a widget. The returned markup will be delivered by an AJAX call and will not be escaped.
      *
      * @return string
      */
     public function renderWidgetContent(): string {
-        $this->view->setTemplate('HhnewsWidget');
-        $this->view->assignMultiple([
+        $view = $this->backendViewFactory->create($this->request, ['typo3/cms-dashboard', 'hauerheinrich/hh-widget-hhnews']);
+        $view->setTemplate('HhnewsWidget');
+        $view->assignMultiple([
             'items' => $this->getRssItems(),
             'button' => $this->button,
             'options' => $this->options,
             'configuration' => $this->configuration,
         ]);
 
-        return $this->view->render();
+        return $view->render();
     }
 
     /**

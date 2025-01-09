@@ -10,7 +10,6 @@ services:
   dashboard.widget.hhnews:
     class: 'HauerHeinrich\HhWidgetHhnews\Widgets\HhnewsWidget'
     arguments:
-      $view: '@dashboard.views.widget'
       $cache: '@cache.dashboard.rss'
       $button:
         url: 'https://www.hauer-heinrich.de'

@@ -49,3 +49,4 @@ node_modules
 .sass-cache
 .vscode/
 .githooks/
+/*.zip
