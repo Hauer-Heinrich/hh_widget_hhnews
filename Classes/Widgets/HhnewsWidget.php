@@ -54,7 +54,7 @@ class HhnewsWidget
      */
     public function renderWidgetContent(): string {
         $view = $this->backendViewFactory->create($this->request, ['typo3/cms-dashboard', 'hauerheinrich/hh-widget-hhnews']);
-        $view->setTemplate('HhnewsWidget');
+
         $view->assignMultiple([
             'items' => $this->getRssItems(),
             'button' => $this->button,
@@ -62,7 +62,7 @@ class HhnewsWidget
             'configuration' => $this->configuration,
         ]);
 
-        return $view->render();
+        return $view->render('HhnewsWidget');
     }
 
     /**
