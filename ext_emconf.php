@@ -19,15 +19,10 @@ $EM_CONF['hh_widget_hhnews'] = [
     'author_company' => 'Hauer-Heinrich.de',
     'state' => 'stable',
     'clearCacheOnLoad' => true,
-    'version' => '1.2.1',
-    'autoload' => [
-        'psr-4' => [
-            'HauerHeinrich\\HhWidgetHhnews\\' => 'Classes'
-        ]
-    ],
+    'version' => '1.2.2',
     'constraints' => [
         'depends' => [
-            'typo3' => '12.4.0-13.4.99',
+            'typo3' => '13.4.0-14.3.0',
             'dashboard' => ''
         ],
         'conflicts' => [],
