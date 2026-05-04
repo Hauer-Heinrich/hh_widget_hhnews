@@ -93,16 +93,23 @@ class HhnewsWidget
         $rssFeed = simplexml_load_string($rssContent);
         $items = [];
         foreach ($rssFeed->channel->item as $item) {
+            $enclosure = [];
+            if ($item->enclosure !== null) {
+                $enclosureAttrs = $item->enclosure->attributes();
+                if ($enclosureAttrs !== null) {
+                    $enclosure = [
+                        'url' => trim((string)($enclosureAttrs->url ?? '')),
+                        'type' => trim((string)($enclosureAttrs->type ?? ''))
+                    ];
+                }
+            }
+
             $items[] = [
                 'title' => trim((string)$item->title),
                 'link' => trim((string)$item->link),
                 'pubDate' => trim((string)$item->pubDate),
                 'description' => trim((string)$item->description),
-                'enclosure' => [
-                    'url' => trim((string)$item->enclosure->attributes()->url),
-                    'type' => trim((string)$item->enclosure->attributes()->type)
-                ]
-
+                'enclosure' => $enclosure
             ];
         }
 
